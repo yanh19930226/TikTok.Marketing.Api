@@ -15,6 +15,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
+using TikTok.Marketing.Api.Sdk;
 
 namespace TikTok.Marketing.Api
 {
@@ -32,12 +33,13 @@ namespace TikTok.Marketing.Api
                 options.UseMySql(Configuration.GetSection("Zeus:Connection").Value, sql => sql.MigrationsAssembly(typeof(Startup).GetTypeInfo().Assembly.GetName().Name));
             });
 
+            #region 客户端
             services.Configure<Appsettings>(Configuration.GetSection("Appsettings"));
+
             var settings = services.BuildServiceProvider().GetService<IOptions<Appsettings>>().Value;
 
-
-            //var client = new HttpClient();
-            //services.AddSingleton(new FaceBookClient(client, settings.Facebook.ClientId, settings.Facebook.ClientSecret, settings.Facebook.RedirectUri));
+            services.AddSingleton(new TikTokClient(settings.TikTokConfig.IsDev ? EnvEnum.Dev : EnvEnum.Prod)); 
+            #endregion
 
             #region  ToDo 批量注入Services
             //services.AddScoped<IAdAccountService, AdAccountService>();
