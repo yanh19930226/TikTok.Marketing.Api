@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TikTok.Marketing.Api</name>
+    </assembly>
+    <members>
+        <member name="T:TikTok.Marketing.Api.Controllers.AuthController">
+            <summary>
+            权限认证管理
+            </summary>
+        </member>
+        <member name="M:TikTok.Marketing.Api.Controllers.AuthController.GetTikTokLoginUrl">
+            <summary>
+            获取登入Facebook链接
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TikTok.Marketing.Api.Controllers.AuthController.GetTokenUserAsync(System.String)">
+            <summary>
+            根据授权码获取用户Token
+            </summary>
+            <param name="code">授权码</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
