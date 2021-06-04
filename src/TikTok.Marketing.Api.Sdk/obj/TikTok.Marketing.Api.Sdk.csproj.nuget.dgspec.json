@@ -45,9 +45,9 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
-            "Flurl.Http": {
+            "Newtonsoft.Json": {
               "target": "Package",
-              "version": "[3.2.0, )"
+              "version": "[13.0.1, )"
             }
           },
           "imports": [

@@ -1,15 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "BGj1qYFZOhlfGtmS3Htv25z0GxhcAY4ITsP/XEssItZzQpUnQt9EHY7FcQcVzoDqQLUVU63uF+EZ5FrrLm9umg==",
+  "dgSpecHash": "ra8dcNSpdQd2ZCOR/wVf0cN+b2EjxluR4cnVW2u9G75BIQWnxjM6TQ9CPxv09BMwQKVLOJ8zP2bVhixYuYi+nw==",
   "success": true,
   "projectFilePath": "D:\\Work\\ERP\\TikTok.Marketing.Api\\src\\TikTok.Marketing.Api.Sdk\\TikTok.Marketing.Api.Sdk.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Admin\\.nuget\\packages\\flurl\\3.0.2\\flurl.3.0.2.nupkg.sha512",
-    "C:\\Users\\Admin\\.nuget\\packages\\flurl.http\\3.2.0\\flurl.http.3.2.0.nupkg.sha512",
-    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.netcore.platforms\\2.1.2\\microsoft.netcore.platforms.2.1.2.nupkg.sha512",
-    "C:\\Users\\Admin\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
-    "C:\\Users\\Admin\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.2\\system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512",
-    "C:\\Users\\Admin\\.nuget\\packages\\system.text.encoding.codepages\\4.5.1\\system.text.encoding.codepages.4.5.1.nupkg.sha512"
+    "C:\\Users\\Admin\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
   ],
   "logs": []
 }

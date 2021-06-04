@@ -10,13 +10,13 @@ namespace TikTok.Marketing.Api.Sdk.Models.Terms
         {
 
         }
-        public override string Url => "/term/get/";
+        public override string Url => "/term/get";
     }
 
 
     public class TermGetRequestModel
     {
-         public int advertiser_id { get; set; }
+         public long advertiser_id { get; set; }
         public string lang { get; set; }
         public string term_type { get; set; }
     }

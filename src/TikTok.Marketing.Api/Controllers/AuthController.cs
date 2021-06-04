@@ -1,5 +1,4 @@
-﻿using Flurl.Http;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
@@ -42,6 +41,7 @@ namespace TikTok.Marketing.Api.Controllers
 
             var guid = Guid.NewGuid().ToString();
 
+            //var uri = "https://ads.tiktok.com/marketing_api/auth?app_id=6969066684241952770&state=your_custom_params&redirect_uri=https%3A%2F%2Foauth.ioyumeooo​​w.com%2FHome%2FSigninfacebook&rid=7smac";
             var uri = "https://ads.tiktok.com/marketing_api/auth?app_id=" + _settings.TikTokConfig.AppId+ "&state="+ guid + "&redirect_uri=" + _settings.TikTokConfig.RedirectUri;
 
             res.Success(uri, TikTokResultCode.Succeed.ToString());
@@ -67,6 +67,7 @@ namespace TikTok.Marketing.Api.Controllers
             };
 
             var host = "";
+
             if (_settings.TikTokConfig.IsDev)
             {
                 host = "https://sandbox-ads.tiktok.com/open_api/v1.2";
@@ -78,10 +79,10 @@ namespace TikTok.Marketing.Api.Controllers
             var uri = "/oauth2/access_token/";
             try
             {
-                var result= $"{host}{uri}".WithHeader("Content-Type", "application/json")
-                    .PostJsonAsync(req)
-                    .ReceiveJson<AccessTokenResponse>().Result;
-                res.Result = result;
+                //var result= $"{host}{uri}".WithHeader("Content-Type", "application/json")
+                //    .PostJsonAsync(req)
+                //    .ReceiveJson<AccessTokenResponse>().Result;
+                //res.Result = result;
 
             }
             catch (Exception ex)

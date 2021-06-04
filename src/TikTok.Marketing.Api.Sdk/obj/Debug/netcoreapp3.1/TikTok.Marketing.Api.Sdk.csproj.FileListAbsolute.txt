@@ -1,9 +1,9 @@
 D:\Work\ERP\TikTok.Marketing.Api\src\TikTok.Marketing.Api.Sdk\bin\Debug\netcoreapp3.1\TikTok.Marketing.Api.Sdk.deps.json
 D:\Work\ERP\TikTok.Marketing.Api\src\TikTok.Marketing.Api.Sdk\bin\Debug\netcoreapp3.1\TikTok.Marketing.Api.Sdk.dll
 D:\Work\ERP\TikTok.Marketing.Api\src\TikTok.Marketing.Api.Sdk\bin\Debug\netcoreapp3.1\TikTok.Marketing.Api.Sdk.pdb
-D:\Work\ERP\TikTok.Marketing.Api\src\TikTok.Marketing.Api.Sdk\obj\Debug\netcoreapp3.1\TikTok.Marketing.Api.Sdk.csprojAssemblyReference.cache
 D:\Work\ERP\TikTok.Marketing.Api\src\TikTok.Marketing.Api.Sdk\obj\Debug\netcoreapp3.1\TikTok.Marketing.Api.Sdk.AssemblyInfoInputs.cache
 D:\Work\ERP\TikTok.Marketing.Api\src\TikTok.Marketing.Api.Sdk\obj\Debug\netcoreapp3.1\TikTok.Marketing.Api.Sdk.AssemblyInfo.cs
 D:\Work\ERP\TikTok.Marketing.Api\src\TikTok.Marketing.Api.Sdk\obj\Debug\netcoreapp3.1\TikTok.Marketing.Api.Sdk.csproj.CoreCompileInputs.cache
 D:\Work\ERP\TikTok.Marketing.Api\src\TikTok.Marketing.Api.Sdk\obj\Debug\netcoreapp3.1\TikTok.Marketing.Api.Sdk.dll
 D:\Work\ERP\TikTok.Marketing.Api\src\TikTok.Marketing.Api.Sdk\obj\Debug\netcoreapp3.1\TikTok.Marketing.Api.Sdk.pdb
+D:\Work\ERP\TikTok.Marketing.Api\src\TikTok.Marketing.Api.Sdk\obj\Debug\netcoreapp3.1\TikTok.Marketing.Api.Sdk.csprojAssemblyReference.cache

@@ -11,13 +11,13 @@
         </member>
         <member name="M:TikTok.Marketing.Api.Controllers.AuthController.GetTikTokLoginUrl">
             <summary>
-            获取登入Facebook链接
+            获取登入TikTok链接
             </summary>
             <returns></returns>
         </member>
         <member name="M:TikTok.Marketing.Api.Controllers.AuthController.GetTokenUserAsync(System.String)">
             <summary>
-            根据授权码获取用户Token
+            根据授权码获取长期AccessToken
             </summary>
             <param name="code">授权码</param>
             <returns></returns>

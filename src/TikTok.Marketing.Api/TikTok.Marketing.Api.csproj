@@ -17,5 +17,12 @@
     <ProjectReference Include="..\TikTok.Marketing.Api.Sdk\TikTok.Marketing.Api.Sdk.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Application\CommandHandlers\" />
+    <Folder Include="Application\Commands\" />
+    <Folder Include="Application\Profiles\" />
+    <Folder Include="Application\Queries\" />
+  </ItemGroup>
+
 
 </Project>

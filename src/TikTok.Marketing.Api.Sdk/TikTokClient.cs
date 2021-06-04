@@ -1,8 +1,9 @@
-﻿using Flurl.Http;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,18 @@ namespace TikTok.Marketing.Api.Sdk
     public  class TikTokClient
     {
         private readonly EnvEnum _envEnum;
+        private HttpClient _client { get; }
 
-        public TikTokClient(EnvEnum envEnum)
+        public TikTokClient(EnvEnum envEnum, HttpClient client)
         {
             _envEnum = envEnum;
+            _client = client;
+        }
+        private class JsonContent : StringContent
+        {
+            public JsonContent(object obj) :
+            base(JsonConvert.SerializeObject(obj), Encoding.UTF8, "application/json")
+            { }
         }
 
         private string GetApiBaseUrl()
@@ -95,17 +104,28 @@ namespace TikTok.Marketing.Api.Sdk
 
         }
 
-        public Task<K> GetRequestAsync<T,K>(BaseRequest<T,K> request)
+        public K GetRequestAsync<T,K>(BaseRequest<T,K> request)
         {
+
+            var host = GetApiBaseUrl();
+
+            var queryStr = ExtractCanonicalQueryString(request);
+
+            var uri = $"{host}{request.Url}?{queryStr}";
+
+            _client.DefaultRequestHeaders.Clear();
+
+            _client.DefaultRequestHeaders.Add("Access-Token",  request.Token);
+
             try
             {
-                var host = GetApiBaseUrl();
+               var res = _client.GetAsync(uri).Result;
 
-                var queryStr = ExtractCanonicalQueryString(request);
+                var content =  res.Content.ReadAsStringAsync().Result;
 
-                return $"{host}{request.Url}{queryStr}".WithHeader("Access-Token",  request.Token)
-                    .GetAsync()
-                    .ReceiveJson<K>();
+                K obj =  JsonConvert.DeserializeObject<K>(content);
+
+                return obj;
             }
             catch (Exception ex)
             {
@@ -113,15 +133,39 @@ namespace TikTok.Marketing.Api.Sdk
             }
         }
 
-        public Task<K> PostRequestAsync<T, K>(BaseRequest<T, K> request)
+        public K PostRequestAsync<T, K>(BaseRequest<T, K> request)
         {
+
+            var host = GetApiBaseUrl();
+
+            var uri = $"{host}{request.Url}";
+
+            //_client.DefaultRequestHeaders.Clear();
+
+            //_client.DefaultRequestHeaders.Add("Content-Type", "application/json");
+
+            _client.DefaultRequestHeaders.Add("Access-Token", request.Token);
+
+
+            //HttpRequestMessage msg = new HttpRequestMessage(HttpMethod.Post, uri);
+            //msg.Headers.Authorization = new AuthenticationHeaderValue("Access-Token", request.Token);
+            //msg.Content = new StringContent(JsonConvert.SerializeObject(request.Param), Encoding.UTF8, "application/json");
+
+            //HttpResponseMessage response =  _client.SendAsync(msg).Result;
+
+            //response.EnsureSuccessStatusCode();
+
+            //string json = response.Content.ReadAsStringAsync().Result;
+
             try
             {
-                var host = GetApiBaseUrl();
+                var res = _client.PostAsync(uri, new JsonContent(new { request.Param })).Result;
 
-                return $"{host}{request.Url}".WithHeader("Access-Token", request.Token).WithHeader("Content-Type", "application/json")
-                    .PostJsonAsync(request.Param)
-                    .ReceiveJson<K>();
+                var content = res.Content.ReadAsStringAsync().Result;
+
+                K obj = JsonConvert.DeserializeObject<K>(content);
+
+                return obj;
             }
             catch (Exception ex)
             {

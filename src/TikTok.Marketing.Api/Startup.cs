@@ -13,6 +13,7 @@ using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Reflection;
 using System.Threading.Tasks;
 using TikTok.Marketing.Api.Sdk;
@@ -38,7 +39,9 @@ namespace TikTok.Marketing.Api
 
             var settings = services.BuildServiceProvider().GetService<IOptions<Appsettings>>().Value;
 
-            services.AddSingleton(new TikTokClient(settings.TikTokConfig.IsDev ? EnvEnum.Dev : EnvEnum.Prod)); 
+            var client = new HttpClient();
+
+            services.AddSingleton(new TikTokClient(settings.TikTokConfig.IsDev ? EnvEnum.Dev : EnvEnum.Prod, client)); 
             #endregion
 
             #region  ToDo ÅúÁ¿×¢ÈëServices
