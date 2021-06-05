@@ -140,28 +140,22 @@ namespace TikTok.Marketing.Api.Sdk
 
             var uri = $"{host}{request.Url}";
 
-            //_client.DefaultRequestHeaders.Clear();
+            _client.DefaultRequestHeaders.Clear();
 
-            //_client.DefaultRequestHeaders.Add("Content-Type", "application/json");
+            _client.DefaultRequestHeaders.Add("ContentType", "application/json");
 
             _client.DefaultRequestHeaders.Add("Access-Token", request.Token);
 
-
-            //HttpRequestMessage msg = new HttpRequestMessage(HttpMethod.Post, uri);
-            //msg.Headers.Authorization = new AuthenticationHeaderValue("Access-Token", request.Token);
-            //msg.Content = new StringContent(JsonConvert.SerializeObject(request.Param), Encoding.UTF8, "application/json");
-
-            //HttpResponseMessage response =  _client.SendAsync(msg).Result;
-
-            //response.EnsureSuccessStatusCode();
-
-            //string json = response.Content.ReadAsStringAsync().Result;
-
             try
             {
-                var res = _client.PostAsync(uri, new JsonContent(new { request.Param })).Result;
 
-                var content = res.Content.ReadAsStringAsync().Result;
+                HttpContent httpContent = new StringContent(JsonConvert.SerializeObject(request.Param));
+
+                httpContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
+
+                var result = _client.PostAsync(uri, httpContent).Result;
+
+                var content = result.Content.ReadAsStringAsync().Result;
 
                 K obj = JsonConvert.DeserializeObject<K>(content);
 

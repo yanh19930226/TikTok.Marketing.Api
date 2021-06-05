@@ -7,12 +7,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 using TikTok.Marketing.Api.Sdk;
 using TikTok.Marketing.Api.Sdk.Models.Tokens;
 
 namespace TikTok.Marketing.Api.Controllers
 {
+
+
+   
     /// <summary>
     /// 权限认证管理
     /// </summary>
@@ -27,7 +31,12 @@ namespace TikTok.Marketing.Api.Controllers
         {
             _settings = options.Value;
         }
-
+        private class JsonContent : StringContent
+        {
+            public JsonContent(object obj) :
+            base(JsonConvert.SerializeObject(obj), Encoding.UTF8, "application/json")
+            { }
+        }
         /// <summary>
         /// 获取登入TikTok链接
         /// </summary>
@@ -39,12 +48,9 @@ namespace TikTok.Marketing.Api.Controllers
 
             var res = new TikTokResult<string>();
 
-            var guid = Guid.NewGuid().ToString();
+            var url = "https://ads.tiktok.com/marketing_api/auth?app_id=6969066684241952770&state=your_custom_params&redirect_uri=https%3A%2F%2Fyanh.fun%2FAuth%2FCode&rid=c6z9spimr96";
 
-            //var uri = "https://ads.tiktok.com/marketing_api/auth?app_id=6969066684241952770&state=your_custom_params&redirect_uri=https%3A%2F%2Foauth.ioyumeooo​​w.com%2FHome%2FSigninfacebook&rid=7smac";
-            var uri = "https://ads.tiktok.com/marketing_api/auth?app_id=" + _settings.TikTokConfig.AppId+ "&state="+ guid + "&redirect_uri=" + _settings.TikTokConfig.RedirectUri;
-
-            res.Success(uri, TikTokResultCode.Succeed.ToString());
+            res.Success(url, TikTokResultCode.Succeed.ToString());
 
             return res;
         }
@@ -56,42 +62,49 @@ namespace TikTok.Marketing.Api.Controllers
         /// <returns></returns>
         [HttpGet]
         [Route("GetTokenUserAsync")]
-        public async Task<TikTokResult<AccessTokenResponse>> GetTokenUserAsync(string code)
+        public  AccessTokenResponse GetTokenUserAsync(string code)
         {
-            var res = new TikTokResult<AccessTokenResponse>();
 
             AccessTokenRequest req = new AccessTokenRequest() { 
                 app_id= _settings.TikTokConfig.AppId,
                 auth_code = code,
-                secret  = _settings.TikTokConfig.Secret,
+                secret = _settings.TikTokConfig.Secret,
             };
 
-            var host = "";
+            var url = "";
 
             if (_settings.TikTokConfig.IsDev)
             {
-                host = "https://sandbox-ads.tiktok.com/open_api/v1.2";
+                url = "https://sandbox-ads.tiktok.com/open_api/v1.2/oauth2/access_token/";
             }
             else
             {
-                host = "https://ads.tiktok.com/open_api/v1.2";
+                url = "https://ads.tiktok.com/open_api/v1.2/oauth2/access_token/";
             }
-            var uri = "/oauth2/access_token/";
+            
             try
             {
-                //var result= $"{host}{uri}".WithHeader("Content-Type", "application/json")
-                //    .PostJsonAsync(req)
-                //    .ReceiveJson<AccessTokenResponse>().Result;
-                //res.Result = result;
+                HttpClient httpClient = new HttpClient();
 
+                httpClient.DefaultRequestHeaders.Add("ContentType", "application/json");
+
+                HttpContent httpContent= new StringContent(JsonConvert.SerializeObject(req));
+
+                httpContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
+
+                var result = httpClient.PostAsync(url, httpContent).Result;
+
+                var content = result.Content.ReadAsStringAsync().Result;
+
+                AccessTokenResponse obj = JsonConvert.DeserializeObject<AccessTokenResponse>(content);
+
+                return obj;
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
-
-            return res;
-
+            return new AccessTokenResponse();
         }
 
         //    /// <summary>
@@ -130,4 +143,6 @@ namespace TikTok.Marketing.Api.Controllers
 
         //    }
     }
+
+    
 }

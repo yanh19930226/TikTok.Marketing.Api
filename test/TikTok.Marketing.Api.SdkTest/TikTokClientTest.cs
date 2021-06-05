@@ -19,7 +19,7 @@ namespace TikTok.Marketing.Api.SdkTest
         public TikTokClientTest()
         {
             var httpClient = new HttpClient();
-            _client = new TikTokClient(EnvEnum.Dev,httpClient);
+            _client = new TikTokClient(EnvEnum.Prod,httpClient);
         }
 
         [Fact]
@@ -43,11 +43,11 @@ namespace TikTok.Marketing.Api.SdkTest
 
             TermConfirmRequestModel model = new TermConfirmRequestModel()
             {
-                advertiser_id = 6969504072827191298,
+                advertiser_id = 6968333440944996354,
                 term_type = "LeadAds"
             };
 
-            var res = _client.PostRequestAsync(new TermConfirmRequest("fd7a075680aee6505fb0206d983eb848f345077b", model));
+            var res = _client.PostRequestAsync(new TermConfirmRequest("8d5a02d95ada539620d0edcd27512061bca0c2df", model));
 
             Assert.Equal("", res.message);
         }
@@ -63,7 +63,7 @@ namespace TikTok.Marketing.Api.SdkTest
                 catalog_id=1111
             };
 
-            var res = _client.PostRequestAsync(new CatalogDeleteRequest("fd7a075680aee6505fb0206d983eb848f345077b", model));
+            var res = _client.PostRequestAsync(new CatalogDeleteRequest("f189829382bead3aa15569bbf8824a7ae999e52e", model));
 
             Assert.Equal("", res.message);
         }
