@@ -59,11 +59,11 @@ namespace TikTok.Marketing.Api.SdkTest
 
             CatalogDeleteRequestModel model = new CatalogDeleteRequestModel()
             {
-                advertiser_id = 6969504072827191298,
+                advertiser_id = 6968333440944996354,
                 catalog_id=1111
             };
 
-            var res = _client.PostRequestAsync(new CatalogDeleteRequest("f189829382bead3aa15569bbf8824a7ae999e52e", model));
+            var res = _client.Post(new CatalogDeleteRequest("8d5a02d95ada539620d0edcd27512061bca0c2df", model));
 
             Assert.Equal("", res.message);
         }

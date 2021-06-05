@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -166,5 +167,26 @@ namespace TikTok.Marketing.Api.Sdk
                 throw new Exception(ex.Message);
             }
         }
+
+
+        public K Post<T, K>(BaseRequest<T, K> request)
+        {
+            var client = new RestClient(GetApiBaseUrl());
+
+            var rq = new RestRequest( request.Url, DataFormat.Json);
+
+            rq.AddJsonBody(JsonConvert.SerializeObject(request.Param));
+            rq.AddHeader("ContentType", "application/json");
+            rq.AddHeader("Access-Token", request.Token);
+          
+            var httpResponse = client.Post(rq).Content;
+
+            var result = JsonConvert.DeserializeObject<K>(httpResponse);
+
+            return result;
+
+        }
     }
+
+
 }

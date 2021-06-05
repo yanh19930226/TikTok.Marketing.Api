@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "XfwwKVhwquADldxtVmxZ7qhGg6Kp4pY7LC037gI2aJTh3stR1goxGq1F3X379/EkQAH7caavX8s2qAtrcHLVFA==",
+  "dgSpecHash": "L9+3ZqYhQM+oZokqoCxsDUEGD6Sm8ObReuBHvSS0/C24sciEOjthbyrvSlKJeIqbwwGVJVDbZHIXkXlgXB+tLw==",
   "success": true,
   "projectFilePath": "D:\\Work\\ERP\\TikTok.Marketing.Api\\src\\TikTok.Marketing.Api\\TikTok.Marketing.Api.csproj",
   "expectedPackageFiles": [
@@ -61,6 +61,7 @@
     "C:\\Users\\Admin\\.nuget\\packages\\pomelo.entityframeworkcore.mysql\\3.1.2\\pomelo.entityframeworkcore.mysql.3.1.2.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\pomelo.jsonobject\\2.2.1\\pomelo.jsonobject.2.2.1.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\rabbitmq.client\\6.2.1\\rabbitmq.client.6.2.1.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\restsharp\\106.11.7\\restsharp.106.11.7.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",

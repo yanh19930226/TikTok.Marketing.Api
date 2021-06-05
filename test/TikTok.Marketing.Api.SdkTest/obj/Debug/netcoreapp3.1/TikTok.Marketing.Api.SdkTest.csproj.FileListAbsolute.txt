@@ -97,3 +97,4 @@ D:\Work\ERP\TikTok.Marketing.Api\test\TikTok.Marketing.Api.SdkTest\obj\Debug\net
 D:\Work\ERP\TikTok.Marketing.Api\test\TikTok.Marketing.Api.SdkTest\obj\Debug\netcoreapp3.1\TikTok.Marketing.Api.SdkTest.dll
 D:\Work\ERP\TikTok.Marketing.Api\test\TikTok.Marketing.Api.SdkTest\obj\Debug\netcoreapp3.1\TikTok.Marketing.Api.SdkTest.pdb
 D:\Work\ERP\TikTok.Marketing.Api\test\TikTok.Marketing.Api.SdkTest\obj\Debug\netcoreapp3.1\TikTok.Marketing.Api.SdkTest.genruntimeconfig.cache
+D:\Work\ERP\TikTok.Marketing.Api\test\TikTok.Marketing.Api.SdkTest\bin\Debug\netcoreapp3.1\RestSharp.dll
