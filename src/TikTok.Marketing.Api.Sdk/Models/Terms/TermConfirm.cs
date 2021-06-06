@@ -10,7 +10,7 @@ namespace TikTok.Marketing.Api.Sdk.Models.Terms
         {
 
         }
-        public override string Url => "/term/confirm";
+        public override string Url => "/term/confirm/";
     }
 
     public class TermConfirmRequestModel 

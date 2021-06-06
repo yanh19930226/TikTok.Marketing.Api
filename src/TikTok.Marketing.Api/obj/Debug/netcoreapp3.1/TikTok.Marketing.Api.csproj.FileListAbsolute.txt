@@ -96,3 +96,4 @@ D:\Work\ERP\TikTok.Marketing.Api\src\TikTok.Marketing.Api\obj\Debug\netcoreapp3.
 D:\Work\ERP\TikTok.Marketing.Api\src\TikTok.Marketing.Api\obj\Debug\netcoreapp3.1\TikTok.Marketing.Api.pdb
 D:\Work\ERP\TikTok.Marketing.Api\src\TikTok.Marketing.Api\obj\Debug\netcoreapp3.1\TikTok.Marketing.Api.genruntimeconfig.cache
 D:\Work\ERP\TikTok.Marketing.Api\src\TikTok.Marketing.Api\bin\Debug\netcoreapp3.1\TikTok.Marketing.Api.xml
+D:\Work\ERP\TikTok.Marketing.Api\src\TikTok.Marketing.Api\bin\Debug\netcoreapp3.1\RestSharp.dll

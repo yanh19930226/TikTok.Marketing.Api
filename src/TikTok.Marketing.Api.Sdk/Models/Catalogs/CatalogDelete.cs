@@ -11,7 +11,7 @@ namespace TikTok.Marketing.Api.Sdk.Models.Catalogs
         {
 
         }
-        public override string Url => "/catalog/delete";
+        public override string Url => "/catalog/delete/";
     }
 
     public class CatalogDeleteRequestModel 

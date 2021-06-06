@@ -15,6 +15,7 @@ namespace TikTok.Marketing.Api.Sdk
     public  class TikTokClient
     {
         private readonly EnvEnum _envEnum;
+
         private HttpClient _client { get; }
 
         public TikTokClient(EnvEnum envEnum, HttpClient client)
@@ -22,6 +23,7 @@ namespace TikTok.Marketing.Api.Sdk
             _envEnum = envEnum;
             _client = client;
         }
+
         private class JsonContent : StringContent
         {
             public JsonContent(object obj) :
@@ -168,6 +170,24 @@ namespace TikTok.Marketing.Api.Sdk
             }
         }
 
+        public K Get<T, K>(BaseRequest<T, K> request)
+        {
+            var client = new RestClient(GetApiBaseUrl());
+
+            var queryStr = ExtractCanonicalQueryString(request);
+
+            var uri = $"{request.Url}?{queryStr}";
+
+            var rq = new RestRequest(uri);
+
+            rq.AddHeader("Access-Token", request.Token);
+
+            var httpResponse = client.Get(rq).Content;
+
+            var result = JsonConvert.DeserializeObject<K>(httpResponse);
+
+            return result;
+        }
 
         public K Post<T, K>(BaseRequest<T, K> request)
         {
@@ -187,6 +207,4 @@ namespace TikTok.Marketing.Api.Sdk
 
         }
     }
-
-
 }

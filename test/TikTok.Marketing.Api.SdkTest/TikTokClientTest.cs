@@ -27,12 +27,12 @@ namespace TikTok.Marketing.Api.SdkTest
         {
 
             TermGetRequestModel model = new TermGetRequestModel() {
-                advertiser_id = 6969504072827191298,
+                advertiser_id = 6968333440944996354,
                 lang = "EN",
                 term_type= "LeadAds"
 
             };
-            var res = _client.GetRequestAsync(new TermGetRequest("fd7a075680aee6505fb0206d983eb848f345077b", model));
+            var res = _client.Get(new TermGetRequest("a4f186b706df6cd49570b3a31e34982ec9d042a2", model));
 
             Assert.Equal("", res.message);
         }
@@ -47,7 +47,7 @@ namespace TikTok.Marketing.Api.SdkTest
                 term_type = "LeadAds"
             };
 
-            var res = _client.PostRequestAsync(new TermConfirmRequest("8d5a02d95ada539620d0edcd27512061bca0c2df", model));
+            var res = _client.PostRequestAsync(new TermConfirmRequest("a4f186b706df6cd49570b3a31e34982ec9d042a2", model));
 
             Assert.Equal("", res.message);
         }
@@ -63,7 +63,7 @@ namespace TikTok.Marketing.Api.SdkTest
                 catalog_id=1111
             };
 
-            var res = _client.Post(new CatalogDeleteRequest("8d5a02d95ada539620d0edcd27512061bca0c2df", model));
+            var res = _client.Post(new CatalogDeleteRequest("a4f186b706df6cd49570b3a31e34982ec9d042a2", model));
 
             Assert.Equal("", res.message);
         }
@@ -75,13 +75,13 @@ namespace TikTok.Marketing.Api.SdkTest
 
             AudienceCreateRequestModel model = new AudienceCreateRequestModel()
             {
-                advertiser_id = 6969504072827191298,
-                custom_audience_name = "",
+                advertiser_id = 6968333440944996354,
+                custom_audience_name = "ttttt",
                 file_paths=null,
                 calculate_type=""
             };
 
-            var res = _client.PostRequestAsync(new AudienceCreateRequest("fd7a075680aee6505fb0206d983eb848f345077b", model));
+            var res = _client.PostRequestAsync(new AudienceCreateRequest("a4f186b706df6cd49570b3a31e34982ec9d042a2", model));
 
             Assert.Equal("", res.message);
         }
