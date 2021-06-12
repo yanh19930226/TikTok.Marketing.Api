@@ -24,6 +24,8 @@ namespace TikTok.Marketing.Api.Sdk
             _client = client;
         }
 
+        #region private
+
         private class JsonContent : StringContent
         {
             public JsonContent(object obj) :
@@ -105,10 +107,13 @@ namespace TikTok.Marketing.Api.Sdk
 
             return canonicalQueryString.ToString();
 
-        }
+        } 
+
+        #endregion
 
         public K GetRequestAsync<T,K>(BaseRequest<T,K> request)
         {
+
 
             var host = GetApiBaseUrl();
 

@@ -1568,7 +1568,7 @@
           "build/netcoreapp2.1/xunit.runner.visualstudio.props": {}
         }
       },
-      "TikTok.Marketing.Api.Sdk/1.0.0": {
+      "TikTok.Marketing.Api.Sdk/1.0.1": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
@@ -5358,7 +5358,7 @@
         "xunit.runner.visualstudio.nuspec"
       ]
     },
-    "TikTok.Marketing.Api.Sdk/1.0.0": {
+    "TikTok.Marketing.Api.Sdk/1.0.1": {
       "type": "project",
       "path": "../../src/TikTok.Marketing.Api.Sdk/TikTok.Marketing.Api.Sdk.csproj",
       "msbuildProject": "../../src/TikTok.Marketing.Api.Sdk/TikTok.Marketing.Api.Sdk.csproj"
@@ -5367,7 +5367,7 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "Microsoft.NET.Test.Sdk >= 16.7.1",
-      "TikTok.Marketing.Api.Sdk >= 1.0.0",
+      "TikTok.Marketing.Api.Sdk >= 1.0.1",
       "coverlet.collector >= 1.3.0",
       "xunit >= 2.4.1",
       "xunit.runner.visualstudio >= 2.4.3"

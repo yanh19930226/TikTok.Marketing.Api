@@ -29,11 +29,11 @@ namespace TikTok.Marketing.Api.Sdk.Models.Tokens
         /// <summary>
         /// scope
         /// </summary>
-        public List<int> scope { get; set; }
+        public List<long> scope { get; set; }
         /// <summary>
         /// advertiser_ids
         /// </summary>
-        public List<int> advertiser_ids { get; set; }
+        public List<long> advertiser_ids { get; set; }
 
     }
 }

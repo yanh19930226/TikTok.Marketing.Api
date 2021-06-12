@@ -14,9 +14,6 @@ using TikTok.Marketing.Api.Sdk.Models.Tokens;
 
 namespace TikTok.Marketing.Api.Controllers
 {
-
-
-   
     /// <summary>
     /// 权限认证管理
     /// </summary>
@@ -143,6 +140,4 @@ namespace TikTok.Marketing.Api.Controllers
 
         //    }
     }
-
-    
 }

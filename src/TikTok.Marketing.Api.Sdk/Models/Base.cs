@@ -39,7 +39,15 @@ namespace TikTok.Marketing.Api.Sdk.Models
         public string request_id { get; set; }
     }
 
-    public class DataConvert : JsonConverter
+    public class PageInfo
+    {
+        public long page { get; set; }
+        public long page_size { get; set; }
+        public long total_number { get; set; }
+        public long total_page { get; set; }
+    }
+}
+public class DataConvert : JsonConverter
     {
         public override bool CanConvert(Type objectType)
         {
@@ -68,4 +76,5 @@ namespace TikTok.Marketing.Api.Sdk.Models
             Console.WriteLine(111);
         }
     }
-}
+
+    
